@@ -1,4 +1,4 @@
-! Copyright 2014, Aytac Alparslan.
+! Copyright 2014, Aytac Alparslan
 ! This file is part of OpenMaXwell.
 !
 ! OpenMaXwell is free software: you can redistribute it and/or modify
