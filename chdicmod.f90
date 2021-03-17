@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !

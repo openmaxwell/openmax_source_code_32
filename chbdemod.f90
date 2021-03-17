@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -590,8 +590,6 @@ MODULE CHBDE
   Subroutine getEUST(kD,r,lFo)
 ! get values epsilon, mue, sigma, tau of all domains
     Implicit none
-    !Complex(8) cAux(nDom+64)
-    Complex(8) cAux(mForA)
     Integer(4), Optional :: kD
     Integer(4) k,lf,iErr,k1,k2
     Logical lr
@@ -636,9 +634,8 @@ MODULE CHBDE
       if(Dom_Form(1,k)(1:1).eq.'#') then
         call FindInFile(Dom_Form(1,k),lf,Dble(fcFld),eDom(k),iErr)
       else
-        !eDom(k:k)=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-        cAux(k:k)=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-        eDom(k)=cAux(k)
+        cFormu=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
+        eDom(k)=cFormu(1)
         if((Dom_Form(1,k)(1:3).eq.'lmf').or.(Dom_Form(1,k)(1:3).eq.'lmo').or.(Dom_Form(1,k)(1:3).eq.'lmw')) then
           call getABdom(Dom_Form(1,k),lf,aux,3)
           aDom(1:2,k)=aux(2:3)
@@ -678,9 +675,8 @@ MODULE CHBDE
         if(Dom_Form(3,k)(1:1).eq.'#') then
           call FindInFile(Dom_Form(3,k),lf,Dble(fcFld),sDom(k),iErr)
         else
-          !sDom(k:k)=cFormula(Dom_Form(3,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          cAux(k:k)=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          sDom(k)=cAux(k)
+          cFormu=cFormula(Dom_Form(3,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
+          sDom(k)=cFormu(1)
         end if
         if(Present(lFo).and.(iErr.eq.0).and.(lf.gt.3)) then
           if(Dom_Form(1,k)(4:4).eq.'(') lFo=.true.
@@ -698,9 +694,8 @@ MODULE CHBDE
       if(Dom_Form(2,k)(1:1).eq.'#') then
         call FindInFile(Dom_Form(2,k),lf,Dble(fcFld),uDom(k),iErr)
       else
-        !uDom(k:k)=cFormula(Dom_Form(2,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          cAux(k:k)=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          uDom(k)=cAux(k)
+        cFormu=cFormula(Dom_Form(2,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
+        uDom(k)=cFormu(1)
         if((Dom_Form(2,k)(1:3).eq.'lmf').or.(Dom_Form(2,k)(1:3).eq.'lmo').or.(Dom_Form(2,k)(1:3).eq.'lmw')) then
           call getABdom(Dom_Form(2,k),lf,aux,3)
           bDom(1:2,k)=aux(2:3)
@@ -740,9 +735,8 @@ MODULE CHBDE
         if(Dom_Form(4,k)(1:1).eq.'#') then
           call FindInFile(Dom_Form(4,k),lf,Dble(fcFld),tDom(k),iErr)
         else
-          !tDom(k:k)=cFormula(Dom_Form(4,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          cAux(k:k)=cFormula(Dom_Form(1,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
-          tDom(k)=cAux(k)
+          cFormu=cFormula(Dom_Form(4,k),lf,cCForm,pCForm,vCForm,5,0,5,1,1,1,iErr)
+          tDom(k)=cFormu(1)
         end if
         if(Present(lFo).and.(iErr.eq.0).and.(lf.gt.3)) then
           if(Dom_Form(1,k)(4:4).eq.'(') lFo=.true.

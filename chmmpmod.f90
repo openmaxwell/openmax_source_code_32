@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -1289,21 +1289,18 @@ MODULE CHMMP
     Complex(8), Allocatable:: ArrExp(:,:)
     Complex(8) cZw,Cp,cFldBnd(10),P,wEz,wEt,wEn,wHz,wHt,wHn,wAz,wAt,wAn,wV,cF
     Real(8) rma,et(3),ez(3),en(3),r(3),rp(3),sPt,wgt,xPt,yPt,xtPt,ytPt,row, &
-    &       cVnorm,dmin,val(2),rNmin(3),w1,w2
+    &       cVnorm,dmin,val(2),rNmin(3)
     Integer(4) i,j,k,ik,i0,i1,i2,idum,kPBnd,kPt,ipos,nBndCnd,kExpFF,kR
     Integer(2) iD0,iCond,iDomL,iDomR,iL,iR,iColLoc,iConLoc,iDomLoc
     Logical lusual,lspec,lxper,lyper,lzper,lxperio,lyperio,lzperio,lsibc,lBC(10),lRSidemin
     External cVnorm
     if(lgcFld) then
       kBndPt=kPt
-      w1=getWeight(kBndPt)
-      w2=dsqrt(wBndPt(kBndPt))
+      wgt=dsqrt(wBndPt(kBndPt))*getWeight(kBndPt)
     else
       kBndPt=iBndPt3D(kPt)
-      w1=getWeight(kBndPt)
-      w2=wBndPt3D(kPt)
+      wgt=wBndPt(kBndPt)*getWeight(kBndPt)
     end if
-    wgt=w1*w2
     if(tBnd(iBndPt(kBndPt))%nBC.lt.1) return
     if((iFunWeight.ne.0_4).and.(nFunA.gt.3)) then
       call FindFunPosition(4,sBndPt(kBndPt),ipos)
@@ -2201,7 +2198,7 @@ MODULE CHMMP
         call Unit3DV(et)
         call Unit3DV(ez)
         call Unit3DV(en)
-        wgt=wBndPt3D(kPt)*getWeight(kBndPt) ! kPt is the current 3D matching point, kBndPt associated the 2D matching point
+        wgt=wBndPt(kBndPt)*getWeight(kBndPt)
         call GetError(r,et,ez,en,iBndPt(kBndPt),wgt,eBndPt3D(kPt),fBndPt3D(kPt),iErr)
         if(iErr.lt.1) then
           eBndPt(kBndPt)=eBndPt(kBndPt)+eBndPt3D(kPt)
@@ -4835,8 +4832,8 @@ MODULE CHMMP
 ! value of basis function
         l=-1
         vCForm(1)=DCmplx(x(i),0.0d0)
-        z(k:k)=CFormula(str(k),l,cCForm,pCForm,vCForm,0,0,1,1,1,1,idum)
-        z(k)=w(i)*z(k)
+        cFormu=CFormula(str(k),l,cCForm,pCForm,vCForm,0,0,1,1,1,1,idum)
+        z(k)=w(i)*cFormu(1)
       end do
       do l=1,nfun
         z(km+l)=-w(i)*f(l,i)

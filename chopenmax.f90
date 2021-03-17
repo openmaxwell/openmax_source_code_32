@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -74,10 +74,10 @@ Program MaX
   nRows=logScreen.numtextrows
   nCols=logScreen.numtextcols
 ! output on info window
-  write(*,*) 'OpenMaXwell, a general MaXwell solver, Version 2017A'
+  write(*,*) 'OpenMaXwell, a general MaXwell solver, Version 2021A'
   write(*,*) ' '
-  write(*,*) 'Copyright 2017, Christian Hafner'
-  write(*,*) 'WWW home page: http://OpenMaX.ethz.ch'
+  write(*,*) 'Copyright 2021, Christian Hafner'
+  write(*,*) 'Original WWW home page: http://OpenMaX.ethz.ch - now in a repository of the ETH library'
   write(*,*) ' '
   write(*,*) 'This program is free software: you can redistribute it and/or modify'
   write(*,*) 'it under the terms of the GNU General Public License as published by'
@@ -173,7 +173,7 @@ Program MaX
 ! Help menu, About Box, status bar off
   ldum=DeleteMenuQQ(6,2)
   ldum=DeleteMenuQQ(6,1)
-  idum=AboutBoxQQ('MaXwell solver\rVersion 2.0\rCopyright 2017, Christian Hafner\rWWW: http://OpenMaX.ethz.ch/'C)
+  idum=AboutBoxQQ('MaXwell solver\rVersion 2.0\rCopyright 2021, Christian Hafner\rWWW: http://OpenMaX.ethz.ch/'C)
   idum=ClickMenuQQ(QWIN$STATUS) ! turn the status bar off (was leaky, is not of much help here)
   lenPro=len_trim(ProFileName)
   ProFileName(lenPro+1:lenPro+1)=Char(0)

@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -311,7 +311,7 @@ MODULE CHOBJ
     Implicit none
     Logical, intent(in) :: lCheck
     Logical ldum,lFileExist
-    Integer(2) iD1,iD2,nBold
+    Integer(2) iD1,iD2
 	  Integer(4) iOk,ios,i,i1,idum,k,n,iCM
     Real(8) d
     if(.not.lgcFld) lGet3DMat=.true.
@@ -334,7 +334,7 @@ MODULE CHOBJ
       close(1)
       return
     end if
-! read number of identifiers and create a fictitious 2D boundary for each identifier (append to existing boundaries)
+! read number of identifiers and create a fictitious 2D boundary for each identifier
     call chread2(1,ich,1,rch,0,iOK)
     if(iOK.ne.0) then
       idum=MessageBoxQQ('Error reading input file!\r(number of identifiers)'C,'Open 3DMP'C, &
@@ -343,7 +343,7 @@ MODULE CHOBJ
 		  return
     end if
     n=ich(1)
-    nBold=Int2(nBnd)
+    i=0
     do i1=1,n
       call chread2(1,ich,2,rch,0,iOK)
       if(iOK.ne.0) then
@@ -352,7 +352,6 @@ MODULE CHOBJ
   	    close(1)
 		    return
       end if
-      i=nBnd
       call InsertBnd(i,1,ldum)
       if(.not.ldum) then
         idum=MessageBoxQQ('Cannot insert boundary!'C,'Open 3DMP'C, &
@@ -387,7 +386,7 @@ MODULE CHOBJ
       k=tBnd(i)%iEdgeOffset+1
       tBndEdg(k)%x=1.0d10 ! dummy large circle
       tBndEdg(k)%y=1.0d10
-      tBndEdg(k)%r=1.0d6
+      tBndEdg(k)%r=1.0d9
       tBndEdg(k)%xa=tBndEdg(k)%x+tBndEdg(k)%r
       tBndEdg(k)%ya=tBndEdg(k)%y
       tBndEdg(k)%xb=tBndEdg(k)%x+tBndEdg(k)%r
@@ -427,7 +426,7 @@ MODULE CHOBJ
   	    close(1)
 		    return
 	    end if
-      tOBJ(i)%iPar(1)=nBold+Int2(ich(1))
+      tOBJ(i)%iPar(1)=Int2(ich(1))
       iD1=tBnd(ich(1))%iRDom
       iD2=tBnd(ich(1))%iLDom
       tOBJ(i)%iPar(2:5)=0_2
@@ -552,7 +551,7 @@ MODULE CHOBJ
 
 ! Object operations
 
-  Subroutine gen3DMatPts(k1,k2,lcount,iAlsoW,nPts,Points,wPoints,iC,iEQ,iOC)
+  Subroutine gen3DMatPts(k1,k2,lcount,iAlsoW,nPts,Points,iC,iEQ,iOC)
 ! generate 3D matching points for the 3D objects k1...k2 -> Points
 ! if iC is present and iC(1)=0, save the color number for the points in iC
 ! if iC is present and iC(1)=1, save the number of the original 2D matching point in iC
@@ -568,7 +567,7 @@ MODULE CHOBJ
     Integer(4) k1,k2,kO,k,i1,i2,i,nPts(*),nP,mP,idum,nEq2D,na,nha,nBndPtI1,nBndPtI2
     Integer(2) iDl,iDR,iCl(1)
     Integer(2), Optional:: iC(*),iEQ(*),iOC(*)
-    Real(8) Points(3,0:3,*),wPoints(*),P(3),vt(3),s,ds,r0,PA(2),PB(2),PC(2),a,b,c,F,ha,h,dh,xa,x,dx,w
+    Real(8) Points(3,0:3,*),P(3),vt(3),s,ds,r0,PA(2),PB(2),PC(2),a,b,c,F,ha,h,dh,xa,x,dx
     Logical lcount,l2DBnd,l2DDom,lsav,l2DNr,lAlsoW
     Integer(4), intent(in) :: iAlsoW
     if(((iBound.ne.2_2).and.(iBound.ne.4_2))) call cBndGetABO() ! get c-poly, splines, match.pts
@@ -615,14 +614,12 @@ MODULE CHOBJ
             na=min(100_4,max(1_4,nint(a*(1.0d0-h/ha)/tOBJ(kO)%Par(1),4)))
             nP=nP+na
           end do
-          w=dsqrt(F/Dble(nP))
         else ! Rectangle
           na= min(100_4,max(1_4,nint(tOBJ(kO)%Par(1)/tOBJ(kO)%Par(3),4)))
           nha=min(100_4,max(1_4,nint(tOBJ(kO)%Par(2)/tOBJ(kO)%Par(3),4)))
           dx=tOBJ(kO)%Par(1)/Dble(na)
           dh=tOBJ(kO)%Par(2)/Dble(nha)
           nP=na*nha
-          w=dsqrt(dx*dh)
         end if
         mP=mP+nP
         nBndEq3D=nBndEq3D+nEq2D*nP
@@ -658,7 +655,6 @@ MODULE CHOBJ
             do i=i1+1,i2
               Points(1:3,0:3,i)=Points(1:3,0:3,i1)
             end do
-            wPoints(i1:i2)=w
             i1=i1-1
             h=-0.5d0*dh
             do i=1,nha
@@ -687,7 +683,6 @@ MODULE CHOBJ
             do i=i1+1,i2
               Points(1:3,0:3,i)=Points(1:3,0:3,i1)
             end do
-            wPoints(i1:i2)=w
             i1=i1-1
             h=-0.5d0*dh
             do i=1,nha
@@ -751,7 +746,6 @@ MODULE CHOBJ
           else
             nP=max(1_4,min(10000_4,nint(tOBJ(kO)%Par(4)*abs(s.div.ds),4)))
           end if
-          w=dsqrt(ds*s/Dble(nP))
           mP=mP+nP
           nBndEq3D=nBndEq3D+nEq2D*nP
           nBndPt3D=nBndPt3D+nP
@@ -794,7 +788,6 @@ MODULE CHOBJ
                 & iObjDra,nDom,-257_2,iDR,iCl,Points(1:3,1,i1:i2),Points(1:3,2,i1:i2),Points(1:3,3,i1:i2),vt)
               end if
             end Select
-            wPoints(i1:i2)=w
             if(lsav.and.l2DBnd.and.(.not.l2DDom)) iC(i1:i2)=Int2(i)
             if(l2DNr) iC(i1:i2)=Int2(k)
             if(Present(iEQ)) iEQ(i1:i2)=nEq2D
@@ -818,7 +811,7 @@ MODULE CHOBJ
 !        1: use boundaries with weight 0 if domain numbers are different
 !        2: use all boundaries
     Implicit none
-    Real(8) Pdum(3),Wdum(1)
+    Real(8) Pdum(3)
     Integer(4) k1,k2,kO,ier,idum,kPt
     Integer(2) iWhat0,iWhat
     Integer(4), intent(in) :: iAlsoW
@@ -829,19 +822,18 @@ MODULE CHOBJ
 ! count 3D matching points
     tOBJ(1:nObj)%nMat=0
     tOBJ(1:nObj)%iMatOffset=0
-    call gen3DMatPts(k1,k2,.true.,iAlsoW,tOBJ(k1:k2)%nMat,Pdum,Wdum)
+    call gen3DMatPts(k1,k2,.true.,iAlsoW,tOBJ(k1:k2)%nMat,Pdum)
 ! allocate memory
     if(.not.lStopThread) then
       if((.not.Allocated(eBndPt3D)).or.(nBndPt3D.ne.mBndPt3DAlloc)) then 
         if(Allocated(eBndPt3D)) DeAllocate(eBndPt3D)
         if(Allocated(fBndPt3D)) DeAllocate(fBndPt3D)
-        if(Allocated(wBndPt3D)) Deallocate(wBndPt3D)
         if(Allocated(BndPt3D)) Deallocate(BndPt3D)
         if(Allocated(iBndPt3D)) Deallocate(iBndPt3D)
         if(Allocated(iObjBndPt3D)) Deallocate(iObjBndPt3D)
         if(Allocated(iEquBndPt3D)) Deallocate(iEquBndPt3D)
         idum=max(1_4,nBndPt3D)
-        Allocate(eBndPt3D(idum),fBndPt3D(idum),wBndPt3D(idum),BndPt3D(3,0:3,idum),iBndPt3D(idum),iObjBndPt3D(idum),&
+        Allocate(eBndPt3D(idum),fBndPt3D(idum),BndPt3D(3,0:3,idum),iBndPt3D(idum),iObjBndPt3D(idum),&
         &        iEquBndPt3D(idum),stat=ier)
         if(ier.ne.0) then
           idum=MessageBoxQQ('Memory alloction failed!'C,'Setup MMP matrix'C, &
@@ -852,14 +844,13 @@ MODULE CHOBJ
         mBndPt3DAlloc=idum
         eBndPt3D=0.0d0
         fBndPt3D=1.0d0
-        wBndPt3D=1.0d0
         iWhatiBndPt3D=-1_2
       end if
     end if
 ! compute 3D matching points, count max. number of equations, set offset info
     if(.not.lStopThread) then 
       iBndPt3D(1)=iWhat
-      call gen3DMatPts(k1,k2,.false.,iAlsoW,tOBJ(k1:k2)%nMat,BndPt3D,wBndPt3D,iBndPt3D,iEquBndPt3D,iObjBndPt3D)
+      call gen3DMatPts(k1,k2,.false.,iAlsoW,tOBJ(k1:k2)%nMat,BndPt3D,iBndPt3D,iEquBndPt3D,iObjBndPt3D)
       tOBJ(k1)%iMatOffset=0
       do kO=k1+1,k2
         tOBJ(kO)%iMatOffset=tOBJ(kO-1)%iMatOffset+tOBJ(kO-1)%nMat
@@ -1301,7 +1292,7 @@ MODULE CHOBJ
     Implicit none
     Real(8), Allocatable :: Points(:,:,:),Orig(:,:)
     Integer(2), Allocatable :: iOrd(:)
-    Real(8) dmin,Pn(3),Ps(3),val(2),s,P(3),W(1),vt(3),r0,PA(2),PB(2),PC(2),a,b,c,F,P3,rminmax,zs,z1,dz,aA,d,zO
+    Real(8) dmin,Pn(3),Ps(3),val(2),s,P(3),vt(3),r0,PA(2),PB(2),PC(2),a,b,c,F,P3,rminmax,zs,z1,dz,aA,d,zO
     Integer(4) kOb,jE0,jE,k1,k2,k,kk,kO,iB,nP,mP,j,iEr,idum,kE1,kE2,kE3,iCl0,iCl2,iCn,iOb,nMultiP,nMP
     Integer(2) iDL1,iDL,iDR,iCl(1)
     Logical ldum,lRSidemin,lDel
@@ -1350,7 +1341,7 @@ MODULE CHOBJ
                           MB$OK.or.MB$ICONSTOP)
           return
         end if
-        call gen3DMatPts(kO,kO,.true.,1_4,tOBJ(kO:kO)%nMat,P,W)
+        call gen3DMatPts(kO,kO,.true.,1_4,tOBJ(kO:kO)%nMat,P)
         if(tOBJ(kO)%iTypO.eq.3) then ! Triangle
           PA(1:2)=tOBJ(kO)%O(1:2)
           PB(1)=tOBJ(kO)%O(3)

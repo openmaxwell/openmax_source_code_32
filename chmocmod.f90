@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -5361,10 +5361,10 @@ CONTAINS
         call setNameS(Argument,lArgument,ProFileName,D3DFileName,'MAX','3Dd',iErr)
         if(iErr.gt.0) return
         lAskObj=.false.
-        lInsertExp=.false.
+        lInsertObj=.false.
         if(nx.ge.0) then
           kInsObj=max(0,min(nObj,nx))
-          lInsertExp=.true.
+          lInsertObj=.true.
         end if
         call Open3DD(.true.,ny,ir,ir2)
       end if

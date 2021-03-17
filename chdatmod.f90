@@ -1,4 +1,4 @@
-! Copyright 2017, Christian Hafner
+! Copyright 2021, Christian Hafner
 !
 ! This file is part of OpenMaXwell.
 !
@@ -98,7 +98,7 @@ MODULE CHDAT
   Character(256) BndFileName,ConFileName,MatFileName,GeoFileName,MshFileName
   Real(8) sBndPt(0:10000)
   Real(8), Allocatable :: wBndPt(:),eBndPt(:),fBndPt(:), &
-  & eBndPt3D(:),fBndPt3D(:),wBndPt3D(:),BndPt3D(:,:,:),BndPt3DF(:),BndPt3DV(:,:),rpGMSH(:,:)
+  & eBndPt3D(:),fBndPt3D(:),BndPt3D(:,:,:),BndPt3DF(:),BndPt3DV(:,:),rpGMSH(:,:)
   Real(8), Allocatable :: sSpline(:),xSpline(:),ySpline(:),xsSpline(:),ysSpline(:)
   Real(8), Allocatable :: sSpl(:),xSpl(:),ySpl(:),xsSpl(:),ysSpl(:)
   Integer(2), Allocatable :: iBndPt(:),jBndPt(:),iBndPt3D(:),iObjBndPt3D(:),iEquBndPt3D(:)
