@@ -1,0 +1,213 @@
+# Microsoft Developer Studio Generated Dependency File, included by MaX.mak
+
+.\avi.cpp : \
+	".\dibapi.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\chbdemod.f90 : \
+	".\Release\CHDAT.mod"\
+	".\Release\CHFOR.mod"\
+	".\resource.fd"\
+	
+
+.\chbmpmod.f90 : \
+	".\Release\CHGRF.mod"\
+	".\Release\CHLOA.mod"\
+	
+
+.\chbndmod.f90 : \
+	".\Release\CHBDE.MOD"\
+	".\Release\CHGRA.mod"\
+	".\resource.fd"\
+	
+
+.\chdatmod.f90 : \
+	".\Release\CHSPL.mod"\
+	".\resource.fd"\
+	
+
+.\CHDIAMOD.F90 : \
+	".\Release\CHDIB.mod"\
+	".\resource.fd"\
+	
+
+.\CHDIBMOD.F90 : \
+	".\Release\CHMOV.mod"\
+	".\Release\CHSER.mod"\
+	".\resource.fd"\
+	
+
+.\CHDLGMOD.F90 : \
+	".\resource.fd"\
+	
+
+.\chdommod.f90 : \
+	".\Release\CHOBJ.mod"\
+	".\resource.fd"\
+	
+
+.\chexpmod.f90 : \
+	".\Release\CHBDE.MOD"\
+	".\Release\CHBND.MOD"\
+	".\resource.fd"\
+	
+
+.\chfldmod.f90 : \
+	".\Release\CHDOM.MOD"\
+	".\resource.fd"\
+	
+
+.\chflgmod.f90 : \
+	".\Release\CHBDE.MOD"\
+	".\Release\CHMMP.mod"\
+	".\resource.fd"\
+	
+
+.\chformod.f90 : \
+	".\Release\CHDAT.mod"\
+	
+
+.\chfunmod.f90 : \
+	".\Release\CHFOR.mod"\
+	".\resource.fd"\
+	
+
+.\chgramod.f90 : \
+	".\Release\CHBMP.MOD"\
+	
+
+.\chgrcmod.f90 : \
+	".\Release\CHFUN.MOD"\
+	
+
+.\chgrfmod.f90 : \
+	".\Release\CHGRC.MOD"\
+	".\resource.fd"\
+	
+
+.\chintmod.f90 : \
+	".\Release\CHFLD.MOD"\
+	".\resource.fd"\
+	
+
+.\CHMATMOD.F90 : \
+	".\Release\CHDLG.MOD"\
+	
+
+.\chmmpmod.f90 : \
+	".\Release\CHINT.MOD"\
+	".\resource.fd"\
+	
+
+.\chmocmod.f90 : \
+	".\Release\CHFLG.MOD"\
+	".\resource.fd"\
+	
+
+.\chmovmod.f90 : \
+	".\Release\CHMOC.MOD"\
+	".\resource.fd"\
+	
+
+.\chobjmod.f90 : \
+	".\Release\CHBDE.MOD"\
+	".\Release\CHEXP.MOD"\
+	".\resource.fd"\
+	
+
+.\CHoGLMod.f90 : \
+	".\Release\CHDLG.MOD"\
+	".\Release\CHMOV.mod"\
+	".\resource.fd"\
+	{$(INCLUDE)}"opengl_gl.mod"\
+	{$(INCLUDE)}"opengl_glu.mod"\
+	{$(INCLUDE)}"opengl_glut.mod"\
+	
+
+.\chsermod.f90 : \
+	".\Release\CHFUN.MOD"\
+	
+
+.\chsplmod.f90 : \
+	".\Release\CHWIN.mod"\
+	
+
+.\chwinmod.f90 : \
+	".\Release\CHMAT.MOD"\
+	
+
+.\dibcopy.c : \
+	".\dibapi.h"\
+	".\dibutil.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\diberror.c : \
+	".\dibapi.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\dibfile.c : \
+	".\dibapi.h"\
+	".\dibutil.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\dibutil.c : \
+	".\dibapi.h"\
+	".\dibutil.h"\
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\dlg.cpp : \
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	
+
+.\gpf.cpp : \
+	".\gpf.h"\
+	
+
+.\html_help.cpp : \
+	"c:\program files\microsoft visual studio\vc98\include\basetsd.h"\
+	"c:\program files\microsoft visual studio\vc98\include\htmlhelp.h"\
+	
+
+.\MaX.F90 : \
+	".\resource.fd"\
+	{$(INCLUDE)}"opengl_glut.mod"\
+	
+
+.\MaX.rc : \
+	".\bitmap1.bmp"\
+	".\bitmap2.bmp"\
+	".\bitmap3.bmp"\
+	".\bitmap4.bmp"\
+	".\bitmap5.bmp"\
+	".\bitmap6.bmp"\
+	".\frameico.ico"\
+	".\icon0.ico"\
+	".\icon1.ico"\
+	".\icon10.ico"\
+	".\icon11.ico"\
+	".\icon12.ico"\
+	".\icon13.ico"\
+	".\icon14.ico"\
+	".\icon15.ico"\
+	".\icon16.ico"\
+	".\icon17.ico"\
+	".\icon18.ico"\
+	".\icon19.ico"\
+	".\icon2.ico"\
+	".\icon20.ico"\
+	".\icon21.ico"\
+	".\icon22.ico"\
+	".\icon23.ico"\
+	".\icon3.ico"\
+	".\icon4.ico"\
+	".\icon5.ico"\
+	".\icon6.ico"\
+	".\icon7.ico"\
+	".\icon8.ico"\
+	".\icon9.ico"\
+	

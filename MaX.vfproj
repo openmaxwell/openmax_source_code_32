@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualStudioProject ProjectCreator="Intel Fortran" Keyword="QuickWin" Version="11.0" ProjectIdGuid="{50D49278-28FD-40B3-BA80-FA5F85EA27CB}">
+	<Platforms>
+		<Platform Name="Win32"/>
+		<Platform Name="x64"/></Platforms>
+	<Configurations>
+		<Configuration Name="Debug|Win32" TargetName="OpenMaXwell21A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="C:\Users\aytal\Desktop\try_openmax\GLUT32;C:\Program Files (x86)\Intel\oneAPI\mkl\2021.1.1\lib\ia32;C:\Program Files (x86)\Intel\oneAPI\compiler\2021.1.1\windows\redist\ia32_win\compiler;C:\Users\aytal\Desktop\try_openmax\avi32\Release" EnableRecursion="true" ReentrantCode="reentrancyThreaded" FPS4Libs="false" DebugParameter="debugParameterAll" LocalSavedScalarsZero="true" Traceback="true" NullPointerCheck="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\OpenMaXwell21A.exe" AdditionalLibraryDirectories="C:\Users\aytal\Desktop\try_openmax\GLUT32;C:\Program Files (x86)\Intel\oneAPI\mkl\2021.1.1\lib\ia32;C:\Program Files (x86)\Intel\oneAPI\compiler\2021.1.1\windows\redist\ia32_win\compiler;C:\Users\aytal\Desktop\try_openmax\avi32\Release" IgnoreDefaultLibraryNames="libcmt.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" StackReserveSize="20000000" AdditionalDependencies="avi.lib libiomp5md.lib mkl_intel_c.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|Win32" TargetName="OpenMaXwell21A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="C:\Users\aytal\Desktop\try_openmax\GLUT32;C:\Program Files (x86)\Intel\oneAPI\mkl\2021.1.1\lib\ia32;C:\Program Files (x86)\Intel\oneAPI\compiler\2021.1.1\windows\redist\ia32_win\compiler;C:\Users\aytal\Desktop\try_openmax\avi32\Release" OpenMPConditionalCompilation="false" ReentrantCode="reentrancyThreaded" EnableEnhancedInstructionSet="codeArchIA32" FPS4Libs="false" WarnUnusedVariables="true" WarnTruncateSource="true" WarnInterfaces="true" RuntimeLibrary="rtQuickWin"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\OpenMaXwell21A.exe" SuppressStartupBanner="true" AdditionalLibraryDirectories="C:\Users\aytal\Desktop\try_openmax\GLUT32;C:\Program Files (x86)\Intel\oneAPI\mkl\2021.1.1\lib\ia32;C:\Program Files (x86)\Intel\oneAPI\compiler\2021.1.1\windows\redist\ia32_win\compiler;C:\Users\aytal\Desktop\try_openmax\avi32\Release" IgnoreDefaultLibraryNames="libcmtd.lib" SubSystem="subSystemWindows" StackReserveSize="20000000" LargeAddressAware="addrAwareLarge" AdditionalDependencies="avi.lib libiomp5md.lib mkl_intel_c.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="AMD32|Win32">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AutoParallelThreshold="90" AdditionalIncludeDirectories="\max32\GLUT32;\acml4.0.0\ifort32\lib" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" BoundsCheck="true" RuntimeLibrary="rtQuickWin" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\Open$(ProjectName)well15A.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="\max32\GLUT32;\acml4.0.0\ifort32_mp\lib" IgnoreDefaultLibraryNames="LIBCMT.lib" SubSystem="subSystemWindows" AdditionalDependencies="libacml_mp_dll.lib libguide40.lib avi32\release\avi.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug64|Win32" TargetName="OpenMaXwell17A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\compiler\lib;\OpenMaX\avi64\x64\Debug" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\Open$(ProjectName)well17a.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="\Openmax\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\compiler\lib;\OpenMaX\avi64\x64\Debug" IgnoreDefaultLibraryNames="LIBCMTD.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" AdditionalDependencies="avi\debug\avi.lib mkl_c.lib libguide.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug|x64" TargetName="OpenMaXwell15B">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="\OpenMaX\GLUT32;C:\Program Files (x86)\Intel\ComposerXE 2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2015\compiler\lib;\OpenMaX\avi32\release" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\$OpenMaXwell15B.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="\OpenMaX\max32\GLUT32;C:\Program Files (x86)\Intel\ComposerXE 2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2015\compiler\lib;\OpenMaX\max32\avi32\release" IgnoreDefaultLibraryNames="LIBCMTD.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" AdditionalDependencies="avi.lib libiomp5md.lib mkl_intel_c.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release|x64" TargetName="OpenMaXwell15B">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="E:\maxnew\GLUT32;E:\Program Files\Intel\MKL\10.0.012\ia32\lib" EnableRecursion="true" ReentrantCode="reentrancyThreaded" RuntimeLibrary="rtQuickWin"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\$OpenMaXwell15B.exe" SuppressStartupBanner="true" AdditionalLibraryDirectories="E:\maxnew\GLUT32;E:\Program Files\Intel\MKL\10.0.012\ia32\lib" IgnoreDefaultLibraryNames="LIBCMTD.lib" SubSystem="subSystemWindows" AdditionalDependencies="avi\debug\avi.lib mkl_c.lib libguide.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="AMD32|x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="E:\maxnew\GLUT32;E:\acml4.0.0\ifort32\lib" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="E:\maxnew\GLUT32;E:\acml4.0.0\ifort32\lib" IgnoreDefaultLibraryNames="LIBCMT.lib;LIBCMTD.lib;LIBIFCOREMT.lib;LIBMMT.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" AdditionalDependencies="libacml.lib libifcoremd.lib libmmd.lib avi\debug\avi.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Debug64|x64" TargetName="OpenMaXwell17A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2015\compiler\lib;\OpenMaX\avi64\x64\Debug" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\OpenMaXwell17A.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2013 SP1\compiler\lib;\OpenMaX\avi64\x64\Debug" IgnoreDefaultLibraryNames="LIBCMT.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" StackReserveSize="20000000" AdditionalDependencies="avi64.lib libiomp5md.lib mkl_intel_lp64.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Releas64|Win32" TargetName="OpenMaXwell17A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" DebugInformationFormat="debugEnabled" Optimization="optimizeDisabled" AdditionalIncludeDirectories="E:\maxnew\GLUT32;E:\Program Files\Intel\MKL\10.0.012\ia32\lib" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\Open$(ProjectName)well17A.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="E:\maxnew\GLUT32;E:\Program Files\Intel\MKL\10.0.012\ia32\lib" IgnoreDefaultLibraryNames="LIBCMTD.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" AdditionalDependencies="avi\debug\avi.lib mkl_c.lib libguide.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Releas64|x64">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Optimization="optimizeFull" AdditionalIncludeDirectories="E:\maxnew\GLUT64;E:\Program Files\Intel\MKL\10.0.012\em64t\lib" EnableRecursion="true" ReentrantCode="reentrancyThreaded" WarnInterfaces="true" Traceback="true" BoundsCheck="true" RuntimeLibrary="rtQuickWinDebug" Interfaces="true"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\$(ProjectName)08A.exe" LinkIncremental="linkIncrementalNo" SuppressStartupBanner="true" AdditionalLibraryDirectories="E:\maxnew\GLUT64;E:\Program Files\Intel\MKL\10.0.012\em64t\lib" IgnoreDefaultLibraryNames="LIBCMT.lib" GenerateDebugInformation="true" SubSystem="subSystemWindows" AdditionalDependencies="avi\debug\avi.lib mkl_dll.lib libguide.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release64|Win32" TargetName="OpenMaXwell17A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" AdditionalIncludeDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE-2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE-2015\compiler\lib;\OpenMaX\MaX64\avi64\x64\Debug" OpenMPConditionalCompilation="false" ReentrantCode="reentrancyThreaded" EnableEnhancedInstructionSet="codeArchIA32" FPS4Libs="false" WarnUnusedVariables="true" WarnTruncateSource="true" WarnInterfaces="true" RuntimeLibrary="rtQuickWin"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\Open$(ProjectName)well17A.exe" SuppressStartupBanner="true" AdditionalLibraryDirectories="\OpenMaX\GLUT32;C:\Program Files (x86)\Intel\ComposerXE-2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE-2015\compiler\lib;\OpenMaX\max32\avi32\release" IgnoreDefaultLibraryNames="libcmtd.lib" SubSystem="subSystemWindows" StackReserveSize="20000000" LargeAddressAware="addrAwareLarge" AdditionalDependencies="avi.lib libiomp5md.lib mkl_intel_c.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration>
+		<Configuration Name="Release64|x64" TargetName="OpenMaXwell17A">
+				<Tool Name="VFFortranCompilerTool" SuppressStartupBanner="true" Parallelization="true" AdditionalIncludeDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2015\compiler\lib;\OpenMaX\avi64\x64\Debug" OpenMPConditionalCompilation="false" EnableRecursion="true" ReentrantCode="reentrancyThreaded" EnableEnhancedInstructionSet="codeArchSSE3" AlternateParameterSyntax="false" OpenMP="OpenMPParallelCode" FPS4Libs="false" FloatingPointSpeculation="fpSpeculationSafe" BoundsCheck="true" RuntimeLibrary="rtQuickWin"/>
+				<Tool Name="VFLinkerTool" OutputFile="$(OutDir)\OpenMaXwell17A.exe" LinkIncremental="linkIncrementalYes" SuppressStartupBanner="true" AdditionalLibraryDirectories="\OpenMaX\GLUT64;C:\Program Files (x86)\Intel\ComposerXE 2015\mkl\lib;C:\Program Files (x86)\Intel\ComposerXE 2015\compiler\lib;\OpenMaX\avi64\x64\Debug" IgnoreDefaultLibraryNames="libcmtd.lib" SubSystem="subSystemWindows" StackReserveSize="80000000" StackCommitSize="80000000" LargeAddressAware="addrAwareLarge" AdditionalDependencies="avi64.lib libiomp5md.lib mkl_intel_lp64.lib mkl_intel_thread.lib mkl_core.lib GLUT32.lib f90GL.lib f90GLU.lib f90GLUT.lib"/>
+				<Tool Name="VFResourceCompilerTool"/>
+				<Tool Name="VFMidlTool" SuppressStartupBanner="true" TargetEnvironment="midlTargetAMD64"/>
+				<Tool Name="VFCustomBuildTool"/>
+				<Tool Name="VFPreLinkEventTool"/>
+				<Tool Name="VFPreBuildEventTool"/>
+				<Tool Name="VFPostBuildEventTool"/>
+				<Tool Name="VFManifestTool" SuppressStartupBanner="true"/></Configuration></Configurations>
+	<Files>
+		<Filter Name="Header Files" Filter="fi;fd"/>
+		<Filter Name="Resource Files" Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe">
+		<File RelativePath=".\bitmap1.bmp"/>
+		<File RelativePath=".\bitmap2.bmp"/>
+		<File RelativePath=".\bitmap3.bmp"/>
+		<File RelativePath=".\bitmap4.bmp"/>
+		<File RelativePath=".\bitmap5.bmp"/>
+		<File RelativePath=".\bitmap6.bmp"/>
+		<File RelativePath=".\frameico.ico"/>
+		<File RelativePath=".\icon0.ico"/>
+		<File RelativePath=".\icon1.ico"/>
+		<File RelativePath=".\icon10.ico"/>
+		<File RelativePath=".\icon11.ico"/>
+		<File RelativePath=".\icon12.ico"/>
+		<File RelativePath=".\icon13.ico"/>
+		<File RelativePath=".\icon14.ico"/>
+		<File RelativePath=".\icon15.ico"/>
+		<File RelativePath=".\icon16.ico"/>
+		<File RelativePath=".\icon17.ico"/>
+		<File RelativePath=".\icon18.ico"/>
+		<File RelativePath=".\icon2.ico"/>
+		<File RelativePath=".\icon20.ico"/>
+		<File RelativePath=".\icon21.ico"/>
+		<File RelativePath=".\icon22.ico"/>
+		<File RelativePath=".\icon23.ico"/>
+		<File RelativePath=".\icon3.ico"/>
+		<File RelativePath=".\icon4.ico"/>
+		<File RelativePath=".\icon5.ico"/>
+		<File RelativePath=".\icon6.ico"/>
+		<File RelativePath=".\icon7.ico"/>
+		<File RelativePath=".\icon8.ico"/>
+		<File RelativePath=".\icon9.ico"/>
+		<File RelativePath=".\MaX.rc"/>
+		<File RelativePath=".\resource.fd"/>
+		<File RelativePath=".\resource.h"/></Filter>
+		<Filter Name="Source Files" Filter="f90;for;f;fpp;ftn;def;odl;idl">
+		<File RelativePath=".\aalyrmod.f90"/>
+		<File RelativePath=".\chbdemod.f90"/>
+		<File RelativePath=".\chbmpmod.f90"/>
+		<File RelativePath=".\chbndmod.f90"/>
+		<File RelativePath=".\chcfdmod.f90"/>
+		<File RelativePath=".\chdatmod.f90"/>
+		<File RelativePath=".\chdiamod.f90"/>
+		<File RelativePath=".\chdibmod.f90"/>
+		<File RelativePath=".\chdicmod.f90"/>
+		<File RelativePath=".\chdlgmod.f90"/>
+		<File RelativePath=".\chdommod.f90"/>
+		<File RelativePath=".\chexpmod.f90"/>
+		<File RelativePath=".\chfldmod.f90"/>
+		<File RelativePath=".\chflgmod.f90"/>
+		<File RelativePath=".\chformod.f90"/>
+		<File RelativePath=".\chfun.for"/>
+		<File RelativePath=".\chfunmod.f90"/>
+		<File RelativePath=".\chgramod.f90"/>
+		<File RelativePath=".\chgrcmod.f90"/>
+		<File RelativePath=".\chgrfmod.f90"/>
+		<File RelativePath=".\chintmod.f90"/>
+		<File RelativePath=".\chloamod.f90"/>
+		<File RelativePath=".\chmat.for"/>
+		<File RelativePath=".\chmatmod.f90"/>
+		<File RelativePath=".\chmmpmod.f90"/>
+		<File RelativePath=".\chmocmod.f90"/>
+		<File RelativePath=".\chmovmod.f90"/>
+		<File RelativePath=".\chobjmod.f90"/>
+		<File RelativePath=".\choglmod.f90"/>
+		<File RelativePath=".\chopenmax.f90"/>
+		<File RelativePath=".\chpfdmod.f90"/>
+		<File RelativePath=".\chprtmod.f90"/>
+		<File RelativePath=".\chsplmod.f90"/>
+		<File RelativePath=".\chwinmod.f90"/></Filter></Files>
+	<Globals/></VisualStudioProject>
