@@ -590,8 +590,8 @@ MODULE CHBDE
   Subroutine getEUST(kD,r,lFo)
 ! get values epsilon, mue, sigma, tau of all domains
     Implicit none
-    Complex(8) cAux(nDom+64)
-    !Complex(8) cAux(mForA)
+    !Complex(8) cAux(nDom+64)
+    Complex(8) cAux(mForA)
     Integer(4), Optional :: kD
     Integer(4) k,lf,iErr,k1,k2
     Logical lr
