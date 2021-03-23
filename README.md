@@ -1,7 +1,7 @@
 OpenMaXwell, a general MaXwell solver, Version 2021A\
 Copyright 2021, Christian Hafner
 
-Requirements for compiling the source code:
+Instructions for compiling the source code:
 1) Install Microsoft Visual Studio 2019 with the MFC support included (Community version is used)
 2) Install Intel OneAPI Base Toolkit (https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html)
 3) Install Intel OneAPI HPC Toolkit (https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html)
