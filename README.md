@@ -12,6 +12,6 @@ Instructions for compiling the source code:
 7) Build the source code by using Debug-Win32 or Release-Win32 Configurations.
 
   Original WWW home page: http://OpenMaX.ethz.ch - now in a repository of the ETH library at\
-  https://rossa-prod-ap21.ethz.ch:8443/delivery/DeliveryManagerServlet?dps_pid=IE13673599 (Accessed 23.03.2021)\
+  https://wayback.archive-it.org/org-2240/20181119092252/http://openmax.ethz.ch/ \
   This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either  version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details. You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.\
   If you publish results obtained with this software you must mention which of the results were obtained with OpenMaXwell.
